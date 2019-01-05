@@ -83,7 +83,6 @@ set tabstop=4      " tab set to 4 spaces
 set nowrap         " do not wrap lines
 set cursorline     " highlight line of cursor
 
-
 " proper ctrl + v
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
@@ -108,6 +107,7 @@ set autoread
 nnoremap <silent> <C-l> :nohl<CR><C-l> " removes search highlightning with ctrl + l
 map <C-x> :CtrlPBuffer " goes back to the previous opened file
 nmap <S-F>f <Plug>CtrlSFPrompt
+nnoremap <Leader>a :Ack!<Space> " opens the quickfix ack window
 
 " get rid of the arrow keys and : \o/
 noremap <Up> <NOP>
@@ -124,6 +124,7 @@ set background=dark
 colorscheme gruvbox
 set laststatus=2 " show airline even when only 1 file is open
 let g:airline_theme='distinguished'
+let g:airline_section_b = '' " hide cvs information
 
 " 2 below add little red mark on lines over 100 chars
 highlight ColorColumn ctermbg=red ctermfg=black
